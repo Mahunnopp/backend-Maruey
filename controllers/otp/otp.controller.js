@@ -17,6 +17,7 @@ module.exports.sendotp = async (req, res) => {
             }),
         };
         const result = await axios(config);
+
         if (result.data.code === "000") {
             return res.status(200).send({ status: true, result: result.data.result });
           } else {
